@@ -2,7 +2,7 @@
 
         <div class="col-md-12">
             <div class="jumbotron">
-                <h1 class="display-3">Bienvenido <?php echo $nombreUsuario;?></h1>
+                <h1 class="display-3">Bienvenido <?php echo "Sandriteca";?></h1>
                 <p class="lead">Vamos a administrar nuestro libros en el sitio web</p>
                  <hr class="my-2">
                  <p>More info</p>

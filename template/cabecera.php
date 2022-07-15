@@ -27,7 +27,9 @@
         <li class="nav-item">
             <a class="nav-link" href="nosotros.php">Nosotros</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:8888/sitioweb/administrador/">Login</a>
+        </li>
 
     </ul>
 </nav>
