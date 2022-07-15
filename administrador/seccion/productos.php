@@ -3,6 +3,7 @@
 
 $txtID=(isset($_POST['txtID']))?$_POST['txtID']:"";
 $txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
+
 $txtImagen=(isset($_FILES['txtImagen']['name']))?$_FILES['txtImagen']['name']:"";
 $accion=(isset($_POST['accion']))?$_POST['accion']:"";
 
@@ -10,7 +11,7 @@ include("../config/bd.php");
 
 switch($accion){
     case "Agregar":
-        $sentenciaSQL= $conexion->prepare("INSERT INTO libros (nombre, imagen) VALUES (:nombre,:imagen);");
+        $sentenciaSQL= $conexion->prepare("INSERT INTO libros (nombre,imagen) VALUES (:nombre,:imagen);");
         $sentenciaSQL->bindParam(':nombre',$txtNombre);
 
 
@@ -35,6 +36,7 @@ switch($accion){
 
             $sentenciaSQL= $conexion->prepare("UPDATE libros SET nombre=:nombre WHERE id=:id");
             $sentenciaSQL->bindParam(':nombre',$txtNombre);
+
             $sentenciaSQL->bindParam(':id',$txtID);
             $sentenciaSQL->execute();
 
@@ -143,13 +145,14 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
 <div class = "form-group">
 <label for="txtID">ID:</label>
-<input type="text" required readonly class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="ID">
+<input type="text" class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="ID">
 </div>
 
 <div class = "form-group">
 <label for="txtNombre">Nombre:</label>
 <input type="text" class="form-control"value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Nombre del libro">
 </div>
+
 
 
 <div class = "form-group">
@@ -206,6 +209,7 @@ $listaLibros=$sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <td><?php echo $libro['id']; ?> </td>
             <td><?php echo $libro['nombre']; ?></td>
+
             <td>
 
             <img class="img-thumbnail rounded" src="../../img/<?php echo $libro['imagen']; ?>" width="50" alt="" srcset="">
