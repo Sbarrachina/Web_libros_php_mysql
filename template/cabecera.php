@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitio web</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
     body{
         background-image: url(./img/fondo_blanco.jpg);
         background-size: cover;
         background-repeat: no-repeat;
+        font-family: 'Oswald', sans-serif;
 }
 
 nav{
@@ -21,8 +25,13 @@ font-size: 22px;
 margin-left: 20px;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
 .btn-lg{
     border-radius: 60px;
+    color:#f8f9fa
 }
 
 h1 strong{
@@ -31,6 +40,13 @@ h1 strong{
 h4{
     font-size: 18px;
     text-align: center;
+}
+
+
+
+.text-muted {
+    --bs-text-opacity: 1;
+    font-family: 'Oswald', sans-serif;
 }
 
 </style>
@@ -52,9 +68,7 @@ h4{
             <a class="nav-link" href="productos.php">Libros</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="nosotros.php">Sobre mí</a>
-        </li>
+        
         <li class="nav-item">
             <a class="nav-link" href="http://localhost:8888/sitioweb/administrador/">Login</a>
         </li>
